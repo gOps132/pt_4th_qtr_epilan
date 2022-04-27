@@ -14,7 +14,7 @@ const Memes = (props) => {
 	const router = useRouter();
 	
 	if (router.isFallback) {
-        return <Loader />
+		return <Loader />
 	}
 	return (
 		<div className={common_style.main_div}>
