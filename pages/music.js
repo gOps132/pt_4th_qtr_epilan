@@ -24,7 +24,7 @@ const Music = (props) => {
 	return (
 		<>
 			<div className={`${common_styles.main_div}`}>
-				{console.log(props.spotify_data)}
+				{(process && process.env.NODE_ENV === 'development') ? console.log(props.spotify_data) : <></>}
 				{
 					(!props.err ?
 						<>

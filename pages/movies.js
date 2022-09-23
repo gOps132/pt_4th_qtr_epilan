@@ -15,7 +15,7 @@ const Movies = (props) => {
 		<div className={common_styles.main_div}>
 			{(!props.err ?
 				<>
-					{console.log(props.imdb_data)}
+					{(process && process.env.NODE_ENV === 'development') ? console.log(props.imdb_data) : <></>}
 					<h1>Favorite Movies</h1>
 					<ul className={movie_styles.list}>
 						{props.imdb_data.items.map((i, t) => {

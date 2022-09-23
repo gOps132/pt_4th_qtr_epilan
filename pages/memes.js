@@ -35,7 +35,7 @@ const Memes = (props) => {
 					)
 				})}
 				{/* DEBUG */}
-				{console.log(props.main_obj)}
+				{(process && process.env.NODE_ENV === 'development') ? console.log(props.main_obj) : <></>}
 			</div>
 		</div>
 	);
@@ -47,7 +47,7 @@ export async function getStaticProps() {
 	}
 
 	let image_names = fs.readdirSync("public/img/memes");
-	console.log(image_names);
+	{(process && process.env.NODE_ENV === 'development') ? console.log(image_names) : null;}
 	for (let i = 0; i < image_names.length; i++) {
 		let tmp;
 		let m_width = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).width / 1.5, ((t) => { if (t > 800) { tmp = tmp / 1.5 } })(tmp), tmp);

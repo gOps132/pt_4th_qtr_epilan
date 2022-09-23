@@ -17,6 +17,7 @@ module.exports = {
 		domains: [
 			'imdb-api.com',
 			'mosaic.scdn.co',
+			"m.media-amazon.com"
 		],
 	},
 };
